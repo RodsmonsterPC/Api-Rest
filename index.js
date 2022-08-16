@@ -58,6 +58,18 @@ app.get("/file-awaits-async", async (request, response) =>{
     
 
 })
+
+app.get("/koders", async (request, response) =>{
+
+    const db = await fsPromises.readFile("koders.json", "utf8")
+
+    response.send(db)
+    response.end()
+})
+
+
+
+
 app.listen("8080", ()=>{
 
     console.log("servidor Escuchando")
