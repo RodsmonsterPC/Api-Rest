@@ -82,14 +82,16 @@
         "name": "Rodolfo",
         "modulo": "React",
         "generacion": "19Js",
-        "edad": 23
+        "edad": 23,
+        "hobbies": "Videojuegos"
       },
       {
         "id":12,
         "name": "Sebastian",
         "modulo": "AWS",
         "generacion": "23Js",
-        "edad": 25
+        "edad": 25,
+        "hobbies":"Fotografia"
       },
       {
         "id":13,

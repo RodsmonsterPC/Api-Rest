@@ -78,11 +78,21 @@ const app = express()
     
   
     const { query } = request
-    console.log("modulo", query.modulo)
+    console.log(query)
     const db = await fsPromises.readFile("koders.json", "utf8") 
     const parsedDB = JSON.parse(db)
-    const foundKoder = parsedDB.koders.filter((koder) => koder.modulo === query.modulo)
-    response.json(foundKoder)
+    if (Object.keys(query).length){
+
+      const foundKoder = parsedDB.koders.filter((koder) => koder.modulo === query.modulo && 
+                                                  koder.generacion === query.generacion  &&
+                                                  koder.name === query.name && koder.edad === Number(query.edad)
+                                                  && koder.hobbies === query.hobbies)
+      response.json(foundKoder)
+    }
+   
+    else{
+      response.json(parsedDB.koders)
+    }
   })
 
 
