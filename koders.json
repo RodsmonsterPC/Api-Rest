@@ -1,104 +1,112 @@
 {
-    "mentors": [],
-    "koders": [
-      {
-        "id":1,        
-        "name": "Adrian",
-        "modulo": "Backend",
-        "generacion": "20Js",
-        "edad": 25
-      },
-      {
-        "id":2,
-        "name": "Araceli",
-        "modulo": "React",
-        "generacion": "19Js",
-        "edad": 25
-      },
-      {
-        "id":3,
-        "name": "Breeze",
-        "modulo": "AWS",
-        "generacion": "18Js",
-        "edad": 25
-      },
-      {
-        "id":4,
-        "name": "Christopher",
-        "modulo": "IBM",
-        "generacion": "19Js",
-        "edad": 25
-      },
-      {
-        "id":5,
-        "name": "Eduardo",
-        "modulo": "Enmaquetado",
-        "generacion": "21Js",
-        "edad": 25
-      },
-      {
-        "id":6,
-        "name": "Gio",
-        "modulo": "Javascript",
-        "generacion": "18Js",
-        "edad": 25
-      },
-      {
-        "id":7,
-        "name": "Jose",
-        "modulo": "React",
-        "generacion": "19Js",
-        "edad": 25
-      },
-      {
-        "id":8,
-        "name": "Luis",
-        "modulo": "Google Cloud",
-        "generacion": "22Js",
-        "edad": 25
-      },
-      {
-        "id":9,
-        "name": "Marco",
-        "modulo": "Backend",
-        "generacion": "23Js",
-        "edad": 25
-      },
-      {
-        "name": "Mariana",
-        "modulo": "Enmaquetado",
-        "generacion": "20Js",
-        "edad": 25
-      },
-      {
-        "id":10,
-        "name": "Pete",
-        "modulo": "Javascript",
-        "generacion": "23Js",
-        "edad": 25
-      },
-      {
-        "id":11,
-        "name": "Rodolfo",
-        "modulo": "React",
-        "generacion": "19Js",
-        "edad": 23,
-        "hobbies": "Videojuegos"
-      },
-      {
-        "id":12,
-        "name": "Sebastian",
-        "modulo": "AWS",
-        "generacion": "23Js",
-        "edad": 25,
-        "hobbies":"Fotografia"
-      },
-      {
-        "id":13,
-        "name": "Sofia",
-        "modulo": "React",
-        "generacion": "21Js",
-        "edad": 25
-      }
-    ]
-  }
+  "mentors": [],
+  "koders": [
+    {
+      "id": 1,
+      "name": "Adrian",
+      "modulo": "Backend",
+      "generacion": "20Js",
+      "edad": 25
+    },
+    {
+      "id": 2,
+      "name": "Araceli",
+      "modulo": "React",
+      "generacion": "19Js",
+      "edad": 25
+    },
+    {
+      "id": 3,
+      "name": "Breeze",
+      "modulo": "AWS",
+      "generacion": "18Js",
+      "edad": 25
+    },
+    {
+      "id": 4,
+      "name": "Christopher",
+      "modulo": "IBM",
+      "generacion": "19Js",
+      "edad": 25
+    },
+    {
+      "id": 5,
+      "name": "Eduardo",
+      "modulo": "Enmaquetado",
+      "generacion": "21Js",
+      "edad": 25
+    },
+    {
+      "id": 6,
+      "name": "Gio",
+      "modulo": "Javascript",
+      "generacion": "18Js",
+      "edad": 25
+    },
+    {
+      "id": 7,
+      "name": "Jose",
+      "modulo": "React",
+      "generacion": "19Js",
+      "edad": 25
+    },
+    {
+      "id": 8,
+      "name": "Luis",
+      "modulo": "Google Cloud",
+      "generacion": "22Js",
+      "edad": 25
+    },
+    {
+      "id": 9,
+      "name": "Marco",
+      "modulo": "Backend",
+      "generacion": "23Js",
+      "edad": 25
+    },
+    {
+      "name": "Mariana",
+      "modulo": "Enmaquetado",
+      "generacion": "20Js",
+      "edad": 25
+    },
+    {
+      "id": 10,
+      "name": "Pete",
+      "modulo": "Javascript",
+      "generacion": "23Js",
+      "edad": 25
+    },
+    {
+      "id": 11,
+      "name": "Rodolfo",
+      "modulo": "React",
+      "generacion": "19Js",
+      "edad": 23,
+      "hobbies": "Videojuegos"
+    },
+    {
+      "id": 12,
+      "name": "Sebastian",
+      "modulo": "AWS",
+      "generacion": "23Js",
+      "edad": 25,
+      "hobbies": "Fotografia"
+    },
+    {
+      "id": 13,
+      "name": "Sofia",
+      "modulo": "React",
+      "generacion": "21Js",
+      "edad": 25
+    },
+    {
+      "id": 15,
+      "name": "Miguel",
+      "modulo": "Node",
+      "edad": 26,
+      "generacion": "20Js"
+    }
+    
+  ]
+}

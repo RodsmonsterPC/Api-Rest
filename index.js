@@ -8,6 +8,7 @@ const fs = require("fs")
 const fsPromises = require("fs/promises") 
 const app = express()
 
+app.use(express.json()) //parseando json
 
 
 // app.get("/", (request,response) =>{
@@ -85,7 +86,8 @@ const app = express()
 
       const foundKoder = parsedDB.koders.filter((koder) => koder.modulo === query.modulo && 
                                                   koder.generacion === query.generacion  &&
-                                                  koder.name === query.name && koder.edad === Number(query.edad)
+                                                  koder.name === query.name && 
+                                                  koder.edad === Number(query.edad)
                                                   && koder.hobbies === query.hobbies)
       response.json(foundKoder)
     }
@@ -93,6 +95,51 @@ const app = express()
     else{
       response.json(parsedDB.koders)
     }
+  })
+
+
+
+
+app.post("/koders", async (request, response) =>{
+  const {body} = request
+
+  const bd = await fsPromises.readFile("koders.json", "utf8")
+  const parseDB = JSON.parse(bd)
+
+  const newKoder = {
+    id: parseDB.koders.length + 1,
+    ...body
+  }
+  
+  parseDB.koders.push(newKoder)
+  
+  await fsPromises.writeFile("koders.json", JSON.stringify(parseDB, "\n", 2), "utf8")
+  
+  response.json(newKoder)
+
+})
+
+app.put("/koders/:id", async (request, response) => {
+    // Path params
+    const { params } = request
+    const {body} = request
+    // DB
+    const db = await fsPromises.readFile("koders.json", "utf8")
+    const parsedDB = JSON.parse(db)
+  
+    // Filtramos para encontrar al koder con identiciador 2
+    const foundKoder = parsedDB.koders.filter((koder) => koder.id === Number(params.id))
+  
+    const newKoder ={
+      id: Number(params.id),
+      ...body
+    }
+
+    foundKoder.koders.push(newKoder)
+
+    await fsPromises.writeFile("koders.json", JSON.stringify(parsedDB, "\n", 2), "utf8")
+    // Respondemos
+    response.json(parsedDB)
   })
 
 
