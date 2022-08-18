@@ -180,7 +180,7 @@ let index = parseDB.koders.findIndex(koder => koder.id === Number(params.id))
 
 let deleteKoder = parseDB.koders.splice(index,1)
 
-
+await fsPromises.writeFile("koders.json", JSON.stringify(parseDB, "\n", 2), "utf8")
 response.json(deleteKoder)
   
         

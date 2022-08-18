@@ -101,13 +101,6 @@
       "modulo": "React",
       "generacion": "21Js",
       "edad": 25
-    },
-    {
-      "id": 15,
-      "name": "Miguel",
-      "modulo": "Node",
-      "edad": 26,
-      "generacion": "20Js"
     }
   ]
 }
