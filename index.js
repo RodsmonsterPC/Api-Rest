@@ -10,7 +10,13 @@ const app = express()
 
 app.use(express.json()) //parseando json
 
+const middleware2 = ((request,response, next) =>{
 
+  console.log("Estoy en mi middleware 2")
+  
+
+  next()
+})
 // app.get("/", (request,response) =>{
 
 //     response.write("hola bienvenido a nuestra api Express")
@@ -100,7 +106,7 @@ app.get("/koders/:id", async (request, response) => {
 
 
 
-app.post("/koders", async (request, response) =>{
+app.post("/koders", middleware2, async (request, response) =>{
   const {body} = request
 
   const bd = await fsPromises.readFile("koders.json", "utf8")
