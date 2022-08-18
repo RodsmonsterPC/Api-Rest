@@ -59,20 +59,20 @@ app.use(express.json()) //parseando json
     
 
 // })
-// app.get("/koders/:id", async (request, response) => {
-//     // Path params
-//     const { params } = request
+app.get("/koders/:id", async (request, response) => {
+    // Path params
+    const { params } = request
   
-//     // DB
-//     const db = await fsPromise.readFile("koders.json", "utf8")
-//     const parsedDB = JSON.parse(db)
+    // DB
+    const db = await fsPromises.readFile("koders.json", "utf8")
+    const parsedDB = JSON.parse(db)
   
-//     // Filtramos para encontrar al koder con identiciador 2
-//     const foundKoder = parsedDB.koders.filter((koder) => koder.id === Number(params.id))
+    // Filtramos para encontrar al koder con identiciador 2
+    const foundKoder = parsedDB.koders.filter((koder) => koder.id === Number(params.id))
   
-//     // Respondemos
-//     response.json(foundKoder[0])
-//   })
+    // Respondemos
+    response.json(foundKoder[0])
+  })
 
 
   app.get("/koders", async (request, response) => {
@@ -120,29 +120,72 @@ app.post("/koders", async (request, response) =>{
 })
 
 app.put("/koders/:id", async (request, response) => {
-    // Path params
-    const { params } = request
-    const {body} = request
+  
+      const { params } = request
+      const {body} = request
     // DB
     const db = await fsPromises.readFile("koders.json", "utf8")
-    const parsedDB = JSON.parse(db)
+    const parseDB = JSON.parse(db)
   
-    // Filtramos para encontrar al koder con identiciador 2
-    const foundKoder = parsedDB.koders.filter((koder) => koder.id === Number(params.id))
+    let index = parseDB.koders.findIndex(koder => koder.id === Number(params.id))
+    
+    if(index >= 0){
+
+      let updateKoder = { id: Number(params.id), ...body}
   
-    const newKoder ={
-      id: Number(params.id),
-      ...body
+      parseDB.koders[index]=updateKoder;
+  
+      await fsPromises.writeFile("koders.json", JSON.stringify(parseDB, "\n", 2), "utf8")
+      response.json(updateKoder)
+    }else{
+
+      response.json("Koder no existe")
     }
 
-    foundKoder.koders.push(newKoder)
-
-    await fsPromises.writeFile("koders.json", JSON.stringify(parsedDB, "\n", 2), "utf8")
-    // Respondemos
-    response.json(parsedDB)
+      
+            
+     
   })
 
+  app.patch("/koders/:id", async (request, response) => {
+  
+    const { params } = request
+    const {body} = request
+  // DB
+  const db = await fsPromises.readFile("koders.json", "utf8")
+  const parseDB = JSON.parse(db)
 
+  const foundKoder = parseDB.koders.find((koder) => koder.id === Number(params.id))
+  
+  if(foundKoder){
+
+    Object.assign(foundKoder, body)
+    await fsPromises.writeFile("koders.json", JSON.stringify(parseDB, "\n", 2), "utf8")
+      response.json(foundKoder)
+  }else{
+
+    response.json("Koder no existe")
+  }
+   
+})
+
+app.delete("/koders/:id", async (request, response) => {
+  
+  const { params } = request
+// DB
+const db = await fsPromises.readFile("koders.json", "utf8")
+const parseDB = JSON.parse(db)
+
+let index = parseDB.koders.findIndex(koder => koder.id === Number(params.id))
+
+let deleteKoder = parseDB.koders.splice(index,1)
+
+
+response.json(deleteKoder)
+  
+        
+ 
+})
 
 
 app.listen("8080", ()=>{

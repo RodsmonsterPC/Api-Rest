@@ -4,23 +4,24 @@
     {
       "id": 1,
       "name": "Adrian",
-      "modulo": "Backend",
-      "generacion": "20Js",
-      "edad": 25
+      "modulo": "Python",
+      "generacion": "1Js",
+      "edad": 22
     },
     {
       "id": 2,
       "name": "Araceli",
-      "modulo": "React",
-      "generacion": "19Js",
-      "edad": 25
+      "modulo": "AWS",
+      "generacion": "13Js",
+      "edad": 20
     },
     {
       "id": 3,
       "name": "Breeze",
       "modulo": "AWS",
-      "generacion": "18Js",
-      "edad": 25
+      "generacion": "8Js",
+      "edad": 25,
+      "hobbies": "Guitarra"
     },
     {
       "id": 4,
@@ -65,20 +66,21 @@
       "edad": 25
     },
     {
+      "id": 10,
       "name": "Mariana",
       "modulo": "Enmaquetado",
       "generacion": "20Js",
       "edad": 25
     },
     {
-      "id": 10,
+      "id": 11,
       "name": "Pete",
       "modulo": "Javascript",
       "generacion": "23Js",
       "edad": 25
     },
     {
-      "id": 11,
+      "id": 12,
       "name": "Rodolfo",
       "modulo": "React",
       "generacion": "19Js",
@@ -86,7 +88,7 @@
       "hobbies": "Videojuegos"
     },
     {
-      "id": 12,
+      "id": 13,
       "name": "Sebastian",
       "modulo": "AWS",
       "generacion": "23Js",
@@ -94,7 +96,7 @@
       "hobbies": "Fotografia"
     },
     {
-      "id": 13,
+      "id": 14,
       "name": "Sofia",
       "modulo": "React",
       "generacion": "21Js",
@@ -107,6 +109,5 @@
       "edad": 26,
       "generacion": "20Js"
     }
-    
   ]
 }
